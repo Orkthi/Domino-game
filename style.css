@@ -1,3 +1,97 @@
 body{
+    margin: 0;
     background-color: #c4c4c4;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    background-color: blue;
+    height: 15vh;
+
+    background: rgb(101,31,113);
+background: linear-gradient(63deg, rgba(101,31,113,1) 0%, rgba(104,178,248,1) 100%);
+    
+
+}
+.headerContent{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#headerTitle{
+    color: rgb(255, 187, 0);
+    font-size: 46px;
+}
+.page{
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    background-color: #7037cd;
+    width: 100vw;
+    height: 85vh;
+
+
+}
+.gameContainer{
+
+    /* =========== */
+    /* Estilização de Vidro */
+    /* =========== */
+
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    width: 95%;
+    height: 90%;
+    background-image: url('./assets/blurPurpleSky.svg');
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+.playBox{
+
+    /* =========== */
+    /* Estilização */
+    /* =========== */
+
+    border-radius: 47px;
+    background: #1c0345;
+
+    background-color:aqua;
+    height: 50vh;
+    width: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+    
+}
+.playTitle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 22px;
+}
+.playButton{
+
+}
+
+.playButton2{
+
+    border-radius: 47px;
+    background: #1c0345;
+
+    background-color:aqua;
+    /* height: 50vh;
+    width: 50vh; */
 }
