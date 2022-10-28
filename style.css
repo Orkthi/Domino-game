@@ -3,15 +3,13 @@ body{
     background-color: #c4c4c4;
     display: flex;
     flex-direction: column;
+    
 }
 .header{
     display: flex;
     flex-direction: row;
     background-color: blue;
     height: 15vh;
-
-    background: rgb(101,31,113);
-background: linear-gradient(63deg, rgba(101,31,113,1) 0%, rgba(104,178,248,1) 100%);
     
 
 }
@@ -30,17 +28,18 @@ background: linear-gradient(63deg, rgba(101,31,113,1) 0%, rgba(104,178,248,1) 10
     display: flex ;
     justify-content: center;
     align-items: center;
-    background-color: #7037cd;
+    /* background-color: #7037cd; */
     width: 100vw;
     height: 85vh;
-
+    background: rgb(101,31,113);
+    background: linear-gradient(63deg, rgba(101,31,113,1) 0%, rgba(104,178,248,1) 100%);
 
 }
 .gameContainer{
 
-    /* =========== */
+    /* ==================== */
     /* Estilização de Vidro */
-    /* =========== */
+    /* ==================== */
 
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -49,9 +48,9 @@ background: linear-gradient(63deg, rgba(101,31,113,1) 0%, rgba(104,178,248,1) 10
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 
+
     width: 95%;
     height: 90%;
-    background-image: url('./assets/blurPurpleSky.svg');
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -82,16 +81,50 @@ background: linear-gradient(63deg, rgba(101,31,113,1) 0%, rgba(104,178,248,1) 10
     align-items: center;
     font-size: 22px;
 }
-.playButton{
-
-}
 
 .playButton2{
 
-    border-radius: 47px;
-    background: #1c0345;
+    /* ============================ */
+    /* Tamanho e Aparência do Botão */
+    /* ============================ */
 
-    background-color:aqua;
-    /* height: 50vh;
-    width: 50vh; */
+    border-radius: 47px;
+    padding: 15px 32px;
+    cursor: pointer;
+    margin: 4px 2px;
+
+/* 
+    height: 10vw;
+    width: 20vh;
+
+    height: 10vmin;
+    height: 15vmax;
+    width: 10vmin; 
+    width: 30vmax; 
+    
+*/
+
+        /* ==================== */
+        /* Estilização de Vidro */
+        /* ==================== */
+
+        background: rgba( 255, 255, 255, 0.25 );
+        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+        backdrop-filter: blur( 3px );
+        -webkit-backdrop-filter: blur( 3px );
+        border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+    /* ============================ */
+    /* Tamanho e Aparência do Texto */
+    /* ============================ */
+
+    text-size-adjust: 80%;
+    text-align: center;
+    justify-content: center;
+    overflow: auto;
+    font-family: sans-serif;
+    text-decoration: none;
+    -webkit-text-fill-color:#651f71;
+    display: inline-block;
+    font-size: 16px;
 }
