@@ -5,3 +5,7 @@ Paleta de cores
 .color3 { #7037cd };
 .color4 { #651f71 };
 .color5 { #3B0944 };
+
+
+
+Ids do caminho das peças do jogo 
