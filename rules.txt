@@ -1,4 +1,4 @@
-tasks:
+tasks: 
     check the value on the right
     check the value on the left
     put one piece in the right (empty table)
