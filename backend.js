@@ -76,7 +76,7 @@ function remove_piece(pile, position){ // remove uma peça de um grupo de peças
     return pile.splice((position-1), 1)[0]
 }
 
-function rotate_piece(piece){
+function rotate_piece(piece){ // (Deprecated! substituir depois)
 
     let tmp = piece.value_left 
     piece.value_left = piece.value_right
