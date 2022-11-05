@@ -1,0 +1,29 @@
+tasks:
+    check the value on the right
+    check the value on the left
+    put one piece in the right (empty table)
+    put two pieces in the right (non-empty table)
+    put one piece in the left
+
+Regras:
+    -São 7 peças para cada jogador, as 14 restantes seram usadas para "comprar" caso o jogador não tenha as peça necessária;
+		-O jogo começa com o jogador ou o computador que tiver
+			1) a maior peça entre as peças que possuam valores iguais.(Ex 6|6)
+
+			2) caso nem o jogador nem a máquina tenha alguma peça que satisfaça a condição 1, a peça de maior soma de pontos deve ser utilizada.
+
+				Caso a condição inicial seja da máquina, ela disponibiliza a peça.
+
+				Caso a condição inicial seja do humano, a peça correta deve ser utilizada. Se uma peça que seja 	incorreta seja proposta, um erro deve ser sinalizado.
+
+				Quando o jogador/maquina tenha colocado uma peça encaixada na lista visível de peças já jogadas, a vez passa para o oponente, até o jogo acabar.
+
+		-O 1°  jogador joga a primeira peça;
+		-O 2° jogador deve encaixar uma de suas peças que contenha em uma de suas extremidades o valor contido na peça da mesa, caso o jogador não tenha ele deve comprar na pilha uma peça enquanto não tiver uma que se encaixe no tabuleiro;
+		-O 1° jogador repete a mesma ação descrita acima;
+		- O jogo acaba
+			-Quando um dos jogadores conseguir esvaziar as "maos" primeiro;
+			-(Jogo fechado)Quando não existam mais peças a serem compradas e nenhum dos jogadores possuem peças que possam encaixar na mesa, então o jogador com a menor quantidade de peças ganha;
+		-Ganhador
+			- Quem esvaziar a "mão" primeiro;
+			- 
