@@ -39,7 +39,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para contribuir com Dominoh Game, siga estas etapas:
 
 1. Escolha uma pasta a qual será destinada para receber o repositório;
-2. Crie um repositório local na pasta desejada com o seguinte comando na no terminal dentro da pasta escolhida `<git init>`;
+2. Crie um repositório local na pasta desejada com o seguinte comando no terminal dentro da pasta escolhida `<git init>`;
 3. Clone o repositório com `<git clone https://github.com/Orkthi/Domino-game>`;
 4. Informe o git as pastas e arquivos alterados com `<git add>`;
 5. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`;
