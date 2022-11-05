@@ -9,7 +9,7 @@
 
 <img src="https://cdn.discordapp.com/attachments/1028505420475674685/1038568425309614160/Landing_Page.jpg" alt="Landing Page">
 
-> Landing Page do Site.
+> [Landing Page do Site](https://danielmelloo.github.io/Domino-game/).
 
 ### Ajustes e melhorias
 
