@@ -1,4 +1,7 @@
 # arquivos para typescript
-backend.ts
-tsconfig.json
+# backend.ts
+# tsconfig.json
+
+# lista de organização
 goals.list
+goals.list~
