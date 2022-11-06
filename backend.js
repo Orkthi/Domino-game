@@ -37,6 +37,13 @@ class player{
             this.hand.push(this.pile.pop())
         }
     }
+    check_empty(){
+        if(this.hand.length == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
     set_right(hand_position){ // joga uma peça escolhida da mão do jogador na ponta direita da sequencia da mesa
 
         if(test_empty(this.table)){
