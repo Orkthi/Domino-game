@@ -19,11 +19,64 @@ class piece{
 }
 
 class player{
-    constructor(){
+    constructor(pile, table){    
         this.hand = [];
-
+        this.pile = pile;
+        this.table = table;
+        this.score = 0;
     }
-    
+    print_hand(){ // imprime cada peça da mão do jogador no terminal, e a posição em que ela está
+
+        for(var i = 0; i < this.hand.length; i++){
+            console.log("Piece "+i+": "+this.hand[i].string());
+        }
+        
+    }
+    draw_piece(quantity = 1){ // compra uma peça da pilha inicial
+        for(var i = 0; i < quantity; i++){
+            this.hand.push(this.pile.pop())
+        }
+    }
+    set_right(hand_position){ // joga uma peça escolhida da mão do jogador na ponta direita da sequencia da mesa
+
+        if(test_empty(this.table)){
+            var piece = remove_piece(this.hand, hand_position);
+            this.table.push(piece);
+            return 1;
+        } else if((this.table[this.table.length-1].value_right) == (this.hand[hand_position].value_left)) {
+            var piece = remove_piece(this.hand, hand_position)
+            this.table.push(piece);
+            return 1;
+        } else if((this.table[this.table.length-1].value_right) == (this.hand[hand_position].value_right)) {
+            var piece = remove_piece(this.hand, hand_position)
+            piece.rotate();
+            this.table.push(piece);
+            return 1;
+        } else {
+            console.log('not empty or incompatible');
+            return 0;
+        }
+    }
+    set_left(hand_position){ // joga uma peça escolhida da mão do jogador na ponta esquerda da sequencia da mesa se possivel (é escolhida pela numeração mostrada no method print_hand())
+
+        if(test_empty(this.table)){
+            var piece = remove_piece(this.hand, hand_position);
+            this.table.unshift(piece);
+            return 1;
+        } else if((this.table[0].value_left) == (this.hand[hand_position].value_right)) {
+            var piece = remove_piece(this.hand, hand_position);
+            this.table.unshift(piece);
+            return 1;
+        } else if((this.table[0].value_left) == (this.hand[hand_position].value_left)) {
+            var piece = remove_piece(this.hand, hand_position);
+            piece.rotate();
+            this.table.unshift(piece);
+            return 1;
+        } else {
+            console.log('not empty or incompatible');
+            return 0;
+        }
+    }
 }
 
 ////////////////////////////////////////
@@ -41,11 +94,13 @@ function generate_pile(pile){ // (QUEBRADA! precisa refazer)
 }
 
 function print_pile(pile){ // imprime no console as peças de grupo de peças
-    let last = (pile.length - 1)
+    
+    let last = ((pile.length)-1)
 
     for(let i = 0; i <= last; i++){
-        console.log("Piece " + (i+1) + ":" + pile[i].string())
+        console.log("Piece "+i+":"+pile[i].string())
     }
+
 }
 
 function shuffle_pile(pile){
@@ -66,142 +121,24 @@ function draw_piece(pile, player, quantity = 1){ // passa uma peça da pilha de 
     
     for(let i = quantity; i > 0; i--){
         let tmp = pile.pop()
-        player.push(tmp)
+        player.hand.push(tmp)
     }
     
 }
 
 function remove_piece(pile, position){ // remove uma peça de um grupo de peças (contagem começa do 1, não do 0)
-    console.log("[removing piece "+position+"]")
-    return pile.splice((position-1), 1)[0]
+    console.log("[removing piece "+(position)+"]")
+    return pile.splice((position), 1)[0]
 }
 
-function rotate_piece(piece){ // (Deprecated! substituir depois)
-
-    let tmp = piece.value_left 
-    piece.value_left = piece.value_right
-    piece.value_right = tmp   
-}
-
-function test_pile_empty(pile){ // verifica se tem peças na mesa
+function test_empty(pile){ // verifica se tem peças na mesa
     
     return Boolean(!(pile.length))
 }
 
-/* need to do:
-
-play_piece_left(table, piece)
-play_piece_right(table, piece)
-
-value_tail_left(table, player, position)
-value_tail_right(table)
-
-
-
-*/
-
-
-function value_tail_right(table){ // retorna o numero na ponta direita da sequencia de peças da mesa
-
-    // essa função só funciona se o array não está vazio
-
-    if(test_pile_empty == true){ // detecção de erro
-        console.log("[array vazio]")
-        return -1
-    } else {
-        let last = (table.length) - 1
-        let piece = table[last]   
-        let value = piece.value_right
-
-        return value
-    }
+function game_match(){ // controla a partida... (W.I.P)
+    
 }
-
-
-function set_tail_right(table,player,hand_position){ // coloca uma peça na ponta direita da sequencia da mesa
-
-    let position = (hand_position)-1
-    let piece = player[position]
-
-    if(test_pile_empty(table) == true){
-    
-        remove_piece(player,position)
-        table.push(piece)
-    
-    } else if (value_tail_right(table) == piece.value_left) {
-        
-        remove_piece(player,position)
-        table.push(piece)
-
-    } else if (value_tail_right(table) == piece.value_right) {
-        
-        rotate_piece(piece)
-        remove_piece(player,position)
-        table.push(piece)
-        
-    } else {
-        console.log("error")
-    }
-}
-
-/* function check_value_right(table){ // retorna o valor da ponta direita da de peças na mesa
-
-    if(table.length <= 0){
-    
-        return
-    
-    } else {
-    
-        let last = ((table.length)-1)
-        return table[last].value_right
-    
-    }
-}
-
-function compatibility_test_right(piece, tail){
-    
-    if(tail.value_right == piece.value_left){
-    
-        return 1 // peça encaixa
-    
-    } else if(tail.value_right == piece.value_right) {
-        
-        return 2 // peça precisa de rotação
-
-    } else {
-
-        return 0 // peça não encaixa
-    
-    }
-}
-
-function set_tail_right(table, player, position){ // colocar peça a direita das peças da mesa
-    
-    let piece = player[position-1]
-
-    if(test_pile_empty(table)){
-    
-        remove_piece(player, position)
-        table.push(piece)
-        
-    } else if(compatibility_test_right(piece, ) == 1) {
-        
-        remove_piece(player, position)
-        table.push(piece)
-        
-    } else if(compatibility_test_right(piece) == 2) {
-
-        rotate_piece(piece)
-
-        remove_piece(player, position)
-        table.push(piece)
-    
-    } else {
-
-        console.log("[Incompatible]")
-    
-    }
-} */
 
 ////////////////////////////////////////
 // Main:
@@ -209,20 +146,28 @@ function set_tail_right(table, player, position){ // colocar peça a direita das
 
 let player_hand_size = 7 // quantidade inicial de peças
 
-let draw_pile = [] // objeto que representa a pilha de compra
-let player1 = [] // objeto que representa o jogador
+let pile = [] // objeto que representa a pilha de compra
 let table = [] // objeto que representa o grupo de peças na mesa
 
+let player1 = new player(pile, table) // objeto que representa o jogador
+let player2 = new player(pile, table) // objeto que representa o BOT
+
+table.value_tail_right = function(){
+
+}
+
 console.log("[generate pile]")
-generate_pile(draw_pile) 
+generate_pile(pile) 
 
 console.log("[shuffle pile]")
-shuffle_pile(draw_pile)
+shuffle_pile(pile)
 
 console.log("[draw pieces]")
-draw_piece(draw_pile, player1, player_hand_size)
+player1.draw_piece(player_hand_size)
+// draw_piece(pile, player1, player_hand_size)
 
-console.log("[print player hand]")
-print_pile(player1)
+// console.log("[print player hand]");
+player1.print_hand();
 
-// (...)    
+
+
