@@ -1,0 +1,118 @@
+
+            <div class="horizontalPiece" id="piece01">
+
+            </div>
+
+            <div class="horizontalPiece" id="piece02">
+                
+            </div>
+
+            <div class="verticalPiece" id="piece03">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece04">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece05">
+                
+            </div>
+
+            <div class="verticalPiece" id="piece06">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece07">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece08">
+                
+            </div>
+
+            <div class="verticalPiece" id="piece09">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece010">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece011">
+                
+            </div>
+
+            <div class="verticalPiece" id="piece012">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece013">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece014">
+                
+            </div>
+
+            <div class="verticalPiece" id="piece015">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece016">
+
+            </div>
+
+            <div class="horizontalPiece" id="piece017">
+                
+            </div>
+
+            <div class="verticalPiece" id="piece018">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece019">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece020">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece021">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece022">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece023">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece024">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece025">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece026">
+                
+            </div>
+
+            <div class="horizontalPiece" id="piece027">
+            
+            </div>
+
+
+(function(){
+
+    let l1 = document.querySelector('#createDiv')
+
+    // l1.addEventListener('click', function(){
+        document.querySelector('piece0').classList.remove('hidden')
+    // })
+}())

@@ -1,626 +1,625 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="game.css">
-    <title>Game2</title>
+    <title>Game</title>
+    <link rel="icon" href="/assets/dominologo.svg" type="image/x-icon">
 </head>
 <body>
-    <div class="table">
+
+    <!-- <div class="hand">
         
-        <div class="hand">
-            
+    </div> -->
+    
+    <div class="table">
+        <div class="horizontalBox" id="div1">
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown" id="piece0">
+
+            </div>
+
+        </div>
+
+        <div class="horizontalBox" id="div2" > 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div> 
+        
+        <div class="horizontalBox" id="div3" > 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
         </div>
         
-        <div class="parent">
-            <div class="squareBox" id="div1">
-                <div class="RectangleUp">
-
-                </div>
-
-                <div class="RectangleDown" id="piece0">
-
-                </div>
+        <div class="horizontalBox" id="div4" > 
+            <div class="RectangleUp">
 
             </div>
 
-            <div class="squareBox" id="div2" > 
-                <div class="RectangleUp">
+            <div class="RectangleDown">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
-            </div> 
-            
-            <div class="squareBox" id="div3" > 
-                <div class="RectangleUp">
-
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div4" > 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div5" > 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div5" > 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div6" > 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div6" > 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div7" > 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div8" > 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div7" > 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div9" > 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div10"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizonttalBox" id="div8" > 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div11"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div12"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizonttalBox" id="div9" > 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div13"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div14"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizonttalBox" id="div10"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div15"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div16"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizonttalBox" id="div11"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div17"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div18"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div12"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div19"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div20"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div13"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div21"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div22"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div14"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div23"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div24"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div15"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div25"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div26"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div16"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div27"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div28"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div17"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div29"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div30"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizontalBox" id="div18"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div31"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div32"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizontalBox" id="div19"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div33"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div34"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizontalBox" id="div20"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div35"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div36"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizontalBox" id="div21"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div37"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div38"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div22"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div39"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div40"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div23"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div41"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div42"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div24"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div43"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div44"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizontalBox" id="div25"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div45"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div46"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizontalBox" id="div26"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div47"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div48"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div27"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div49"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div50"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="verticalBox" id="div28"> 
+            <div class="rectangleLeft">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div51"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="rectangleRight">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div52"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizontalBox" id="div29"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div53"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div54"> 
-                <div class="RectangleUp">
+        
+        </div>
+        
+        <div class="horizontalBox" id="div30"> 
+            <div class="RectangleUp">
 
-                </div>
-
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
-            <div class="squareBox" id="div55"> 
-                <div class="RectangleUp">
 
-                </div>
+            <div class="RectangleDown">
 
-                <div class="RectangleDown">
-
-                </div>
-            
             </div>
-            
+        
+        </div>
+        
+        <div class="horizontalBox" id="div31"> 
+            <div class="RectangleUp">
+
             </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div32"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div33"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div34"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div35"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div36"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div37"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div38"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div39"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div40"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div41"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div42"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div43"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div44"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div45"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div46"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div47"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div48"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div49"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div50"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div51"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div52"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="horizontalBox" id="div53"> 
+            <div class="RectangleUp">
+
+            </div>
+
+            <div class="RectangleDown">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div54"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+        
+        <div class="verticalBox" id="div55"> 
+            <div class="rectangleLeft">
+
+            </div>
+
+            <div class="rectangleRight">
+
+            </div>
+        
+        </div>
+
     </div>
 </body>
 </html>

@@ -1,3 +1,7 @@
+.root{
+  --scrollbar-bg: rgb(30, 253, 0);
+}
+
 html{
   min-height: 100%;
 }
@@ -15,8 +19,9 @@ body{
   /* ========= */
 
   background: rgb(101,31,113);
-  background: linear-gradient(63deg, rgba(101,31,113,1) 0%, rgba(104,178,248,1) 100%);
+  background: linear-gradient(63deg, rgba(101,31,113,1) 0%, rgba(104,178,248,1) 100%);;
 }
+
 .header{
   display: flex;
   flex-direction: row;
@@ -42,7 +47,7 @@ body{
 #headerTitle{
   color:   #651f71;
   font-size: 46px;
-  
+
 }
 .page{
   display: flex ;
@@ -92,8 +97,8 @@ body{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center; 
-    
+  align-items: center;
+
 }
 .playTitle{
   display: flex;
@@ -144,18 +149,18 @@ body{
 *, *:before, *:after {
     box-sizing: border-box;
   }
-  
+
   .footer {
     /* ============== */
     /* Posicionamento */
     /* ============== */
 
     width: 100%;
-    bottom: 0px;
-    
+    bottom: 0;
+
     grid-template-rows: auto 1fr auto;
     padding: 30px 30px 20px 30px;
-    
+
 
     /* =================== */
     /* Definições da Fonte */
@@ -167,15 +172,15 @@ body{
     /* ========================= */
     /* Alinhamento dos Elementos */
     /* ========================= */
-    
+
     flex-flow: row wrap;
     align-items: start;
     display: flex;
-    
+
     /* ========= */
     /* Aparência */
     /* ========= */
-    
+
     border-top: 1px solid #e5e5e5;
     background-color: #f4f4f4;
     color: #2f2f2f;
@@ -184,29 +189,29 @@ body{
   .footer > * {
     flex:  1 100%;
   }
-  
+
   .footerBox {
     margin-right: 1.25em;
     margin-bottom: 2em;
-    
+
   }
-  
+
   .footerBox h2 {
     margin-top: 1.3em;
     font-size: 15px;
     font-weight: 400;
   }
-  
+
   .navTitle {
     font-weight: 400;
     font-size: 15px;
   }
-  
+
   .footer address {
     font-style: normal;
     color: #999;
-  } 
-  
+  }
+
   .footerEmailContact {
     display: flex;
     align-items: center;
@@ -221,34 +226,34 @@ body{
     font-size: 1rem;
     padding: 0 1.3em;
   }
-  
+
   .footer ul {
     list-style: none;
     padding-left: 0;
   }
-  
+
   .footer li {
     line-height: 2em;
   }
-  
+
   .footer a {
     text-decoration: none;
   }
-  
+
   .footerNav {
     display: flex;
     flex-flow: row wrap;
   }
-  
+
   .footerNav > * {
     flex: 1 50%;
     margin-right: 1.25em;
   }
-  
+
   .navUl a {
     color: #999;
   }
-  
+
 @media screen and (min-width: 40.375em) {
 .footerNav > * {
   flex: 1;
@@ -265,5 +270,27 @@ body{
   width: 40%;
   height: 90%;
 }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(5, 5, 5, 0.4);
+  border-radius:  50px;
 
 }
+
+body::-webkit-scrollbar-track {
+  background: #7037cd;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background: #506ee5;
+
+}
+
+/* background: rbga(1 2 3 / 40%); */
