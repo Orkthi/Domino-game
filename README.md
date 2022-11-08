@@ -30,7 +30,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 * Você instalou a versão mais recente do HTML, JavaScript e CSS;
 * Você Criou uma conta no GitHub;
-* Você instalou o App do git  [Caso ainda não tenha baixado, clique aqui!](https://git-scm.com/downloads);
+* Você instalou o App do git (Caso ainda não tenha baixado, [clique aqui!](https://git-scm.com/downloads));
 * Caso ainda não tenha instalado [clique aqui](https://docs.google.com/document/d/1GY-16Lr75NpcOLlggQAtETKUDwu3o9VLiN2Jm9Il4Aw/edit?usp=share_link) para instruções de como instalar corretamente e para facilitar futuros commits;
 * Você Configurou o Git Bash com seu usuário do GitHub;
 * Você leu [Documentação do Projeto](https://sites.google.com/view/disciplinas-aulas-tien-2022-2/modelcomp222/trabalho_modelcomp222?authuser=2);
@@ -39,7 +39,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 Para contribuir com Dominoh Game, siga estas etapas:
 
 1. Escolha uma pasta a qual será destinada para receber o repositório;
-2. Crie um repositório local na pasta desejada com o seguinte comando na no terminal dentro da pasta escolhida `<git init>`;
+2. Crie um repositório local na pasta desejada com o seguinte comando no terminal dentro da pasta escolhida `<git init>`;
 3. Clone o repositório com `<git clone https://github.com/Orkthi/Domino-game>`;
 4. Informe o git as pastas e arquivos alterados com `<git add>`;
 5. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`;
@@ -47,5 +47,7 @@ Para contribuir com Dominoh Game, siga estas etapas:
 7. Crie a solicitação de pull no repositório clone que aparece no seu perfil.
 
 Como alternativa, consulte a documentação do GitHub em [como criar uma solicitação pull](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request).
+
+Qualquer dúvida quanto ao git, [clique aqui](https://docs.google.com/document/d/1GY-16Lr75NpcOLlggQAtETKUDwu3o9VLiN2Jm9Il4Aw/edit?usp=share_link)
 
 [⬆ Voltar ao topo](#nome-do-projeto)<br>
