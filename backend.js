@@ -23,9 +23,8 @@ class player{
         this.hand = [];
         this.pile = pile;
         this.table = table;
-        this.score = 0;   
+        this.score = 0;
     }
-
     print_hand(){ // imprime cada peça da mão do jogador no terminal, e a posição em que ela está
 
         for(var i = 0; i < this.hand.length; i++){
@@ -38,58 +37,15 @@ class player{
             this.hand.push(this.pile.pop())
         }
     }
-    check_empty(){ // verifica se a mão do jogador está vazia
+    check_empty(){
         if(this.hand.length == 0){
             return true;
         } else {
             return false;
         }
     }
-    check_fit_right(hand_position){ // verifica se uma peça de uma dada <posição> na mão do jogador cabe na ponta direita da mesa
-        
-        if(test_empty(this.table)){
-            return 1; // mesa vazia
-        } else if((this.table[this.table.length-1].value_right) == (this.hand[hand_position].value_left)) {
-            return 2; // encaixa
-        } else if((this.table[this.table.length-1].value_right) == (this.hand[hand_position].value_right)) {
-            return 3; // encaixa, mas precisa girar
-        } else {
-            return 0; // não encaixa
-        }
-    }
-    check_fit_left(hand_position){
-        if(test_empty(this.table)){
-            return 1; // mesa vazia
-        } else if((this.table[0].value_left) == (this.hand[hand_position].value_right)) {
-            return 2; // encaixa
-        } else if((this.table[0].value_left) == (this.hand[hand_position].value_left)) {
-            return 3; // encaixa, mas precisa girar
-        } else {
-            return 0; // não encaixa
-        }
-    }
     set_right(hand_position){ // joga uma peça escolhida da mão do jogador na ponta direita da sequencia da mesa
-        
-        if(this.check_fit_right(hand_position) == 1){
-            var piece = remove_piece(this.hand, hand_position);
-            this.table.push(piece);
-            return true;
-        } else if(this.check_fit_right(hand_position) == 2) {
-            var piece = remove_piece(this.hand, hand_position)
-            this.table.push(piece);
-            return true;
-        } else if(this.check_fit_right(hand_position) == 3) {
-            var piece = remove_piece(this.hand, hand_position)
-            piece.rotate();
-            this.table.push(piece);
-            return true;
-        } else {
-            console.log('not empty or incompatible');
-            return false;
-        }
 
-
-        /* 
         if(test_empty(this.table)){
             var piece = remove_piece(this.hand, hand_position);
             this.table.push(piece);
@@ -107,19 +63,18 @@ class player{
             console.log('not empty or incompatible');
             return 0;
         }
-         */
     }
     set_left(hand_position){ // joga uma peça escolhida da mão do jogador na ponta esquerda da sequencia da mesa se possivel (é escolhida pela numeração mostrada no method print_hand())
 
-        if(this.check_fit_left(hand_position) == 1){
+        if(test_empty(this.table)){
             var piece = remove_piece(this.hand, hand_position);
             this.table.unshift(piece);
             return 1;
-        } else if(this.check_fit_left(hand_position) == 2) {
+        } else if((this.table[0].value_left) == (this.hand[hand_position].value_right)) {
             var piece = remove_piece(this.hand, hand_position);
             this.table.unshift(piece);
             return 1;
-        } else if(this.check_fit_left(hand_position) == 3) {
+        } else if((this.table[0].value_left) == (this.hand[hand_position].value_left)) {
             var piece = remove_piece(this.hand, hand_position);
             piece.rotate();
             this.table.unshift(piece);
@@ -154,7 +109,8 @@ function print_pile(pile){ // imprime no console as peças de grupo de peças
     }
 
 }
-function shuffle_pile(pile){ // embaralha as peças de um grupo
+
+function shuffle_pile(pile){
 
     let last = (pile.length - 1)
     
@@ -167,7 +123,8 @@ function shuffle_pile(pile){ // embaralha as peças de um grupo
         pile[j] = temp;
     }
 }
-function draw_piece(pile, player, quantity = 1){ // passa uma peça da pilha de compra para o jogador (ou BOT)(Deprecated!)
+
+function draw_piece(pile, player, quantity = 1){ // passa uma peça da pilha de compra para o jogador (ou BOT)
     
     for(let i = quantity; i > 0; i--){
         let tmp = pile.pop()
@@ -175,16 +132,19 @@ function draw_piece(pile, player, quantity = 1){ // passa uma peça da pilha de 
     }
     
 }
+
 function remove_piece(pile, position){ // remove uma peça de um grupo de peças (contagem começa do 1, não do 0)
     console.log("[removing piece "+(position)+"]")
     return pile.splice((position), 1)[0]
 }
+
 function test_empty(pile){ // verifica se tem peças na mesa
     
     return Boolean(!(pile.length))
 }
+
 function game_match(){ // controla a partida... (W.I.P)
-    // (...)
+    
 }
 
 ////////////////////////////////////////
@@ -215,3 +175,6 @@ player1.draw_piece(player_hand_size)
 
 // console.log("[print player hand]");
 player1.print_hand();
+
+
+
