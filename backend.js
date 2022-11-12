@@ -167,24 +167,37 @@ function test_empty(pile){ // verifica se tem peças na mesa
 }
 function decide_order(players){
 
-    let bigger = [];
+    let biggest = new Array(2);
     
-    for(let i = 0; i < players[0].hand.length; i++){
-        
-        if(players[0].hand[i].value_left == value_right){
+    for (let i = 0; i < biggest.length; i++) {
+        for (let j = 0; j < players.length; j++) {
 
-            if((bigger[0] == undefined)||(players[0].hand[i].value_left > bigger[0])) {
-                bigger[0] = players[0].hand[i].value_left; //...
+            if((players[i].hand[j].value_left) == (players[i].hand[j].value_right)){ // when bolth values of the piece are equal
+            
+                if( (biggest[i] == undefined) || (biggest[i] < players[i].hand[j].value_left) ){ // AND "biggests" is empty OR the "value" > "biggest"
+                    biggest[i] = players[i].hand[j].value_left; // biggest recieve value
+                }
+            
             }
 
+            
         }
-        
     }
     
 }
 
-function game(players){ // controla a partida... (como se fosse a main() desse script)
-    
+////////////////////////////////////////
+// Main:
+////////////////////////////////////////
+/* 
+let play = true;
+
+while(play){
+
+
+    play = false;
+}
+ */
     let hand_size = 7; // quantidade inicial de peças
 
     let pile = []; // objeto que representa a pilha de compra
@@ -206,24 +219,8 @@ function game(players){ // controla a partida... (como se fosse a main() desse s
     // iniciando os rodadas
     // (...)
 
-    let repeate = true
-    while(repeate){ // loop de rodada
-        // (...)    
-    }
+    
+    
 
-
-
-    return 0;
-}
-
-////////////////////////////////////////
-// Main:
-////////////////////////////////////////
-
-let play = true;
-
-while(play){
-    play = game(players);
-}
 
 ////////////////////////////////////////
