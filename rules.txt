@@ -1,10 +1,3 @@
-tasks: 
-    check the value on the right
-    check the value on the left
-    put one piece in the right (empty table)
-    put two pieces in the right (non-empty table)
-    put one piece in the left
-
 Regras:
     -São 7 peças para cada jogador, as 14 restantes seram usadas para "comprar" caso o jogador não tenha as peça necessária;
 		-O jogo começa com o jogador ou o computador que tiver

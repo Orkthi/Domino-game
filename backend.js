@@ -23,9 +23,9 @@ class player{
         this.hand = [];
         this.pile = pile;
         this.table = table;
-        this.score = 0;   
+        this.score = 0;
+        this.passed = false;
     }
-
     print_hand(){ // imprime cada peça da mão do jogador no terminal, e a posição em que ela está
 
         for(var i = 0; i < this.hand.length; i++){
@@ -34,9 +34,13 @@ class player{
         
     }
     draw_piece(quantity = 1){ // compra uma peça da pilha inicial
-        for(var i = 0; i < quantity; i++){
-            this.hand.push(this.pile.pop())
+        
+        if(quantity <= this.hand.length){
+            for(var i = 0; i < quantity; i++){
+                this.hand.push(this.pile.pop());
+            }
         }
+        
     }
     check_empty(){ // verifica se a mão do jogador está vazia
         if(this.hand.length == 0){
@@ -129,6 +133,25 @@ class player{
             return 0;
         }
     }
+    check_can_play(){ // retorna quantas peças que estão na mão do jogador que ele pode jogar na hora
+
+        let how_many = 0;
+        
+        for(let i = 0; i < this.hand.length; i++){
+            if(this.check_fit_left(i)){
+                how_many++;
+            }
+            if(this.check_fit_right(i)){
+                how_many++;
+            }
+        }
+
+        // compra peça se não puder jogar
+        // passa o turno se não puder jogar ou comprar
+
+        return how_many;
+        
+    }
 }
 
 ////////////////////////////////////////
@@ -144,7 +167,6 @@ function generate_pile(pile){ // (QUEBRADA! precisa refazer)
         }
     }
 }
-
 function print_pile(pile){ // imprime no console as peças de grupo de peças
     
     let last = ((pile.length)-1)
@@ -183,35 +205,65 @@ function test_empty(pile){ // verifica se tem peças na mesa
     
     return Boolean(!(pile.length))
 }
-function game_match(){ // controla a partida... (W.I.P)
+function decide_order(players){
+
+    let bigger = [];
+    
+    for(let i = 0; i < players[0].hand.length; i++){
+        
+        if(players[0].hand[i].value_left == value_right){
+
+            if((bigger[0] == undefined)||(players[0].hand[i].value_left > bigger[0])) {
+                bigger[0] = players[0].hand[i].value_left; //...
+            }
+
+        }
+        
+    }
+    
+}
+
+function game(players){ // controla a partida... (como se fosse a main() desse script)
+    
+    let hand_size = 7; // quantidade inicial de peças
+
+    let pile = []; // objeto que representa a pilha de compra
+    let table = []; // objeto que representa o grupo de peças na mesa
+    
+    let players = [];
+    
+    // criando players
+    players[0] = new player(pile, table); // objeto que representa o jogador
+    players[1] = new player(pile, table); // objeto que representa o BOT
+
+    // pegando peças iniciais
+    players[0].draw_piece(hand_size);
+    players[1].draw_piece(hand_size);
+
+    // decidindo a ordem
     // (...)
+
+    // iniciando os rodadas
+    // (...)
+
+    let repeate = true
+    while(repeate){ // loop de rodada
+        // (...)    
+    }
+
+
+
+    return 0;
 }
 
 ////////////////////////////////////////
 // Main:
 ////////////////////////////////////////
 
-let player_hand_size = 7 // quantidade inicial de peças
+let play = true;
 
-let pile = [] // objeto que representa a pilha de compra
-let table = [] // objeto que representa o grupo de peças na mesa
-
-let player1 = new player(pile, table) // objeto que representa o jogador
-let player2 = new player(pile, table) // objeto que representa o BOT
-
-table.value_tail_right = function(){
-
+while(play){
+    play = game(players);
 }
 
-console.log("[generate pile]")
-generate_pile(pile) 
-
-console.log("[shuffle pile]")
-shuffle_pile(pile)
-
-console.log("[draw pieces]")
-player1.draw_piece(player_hand_size)
-// draw_piece(pile, player1, player_hand_size)
-
-// console.log("[print player hand]");
-player1.print_hand();
+////////////////////////////////////////
