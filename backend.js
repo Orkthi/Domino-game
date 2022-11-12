@@ -114,12 +114,18 @@ class player{
 // functions:
 ////////////////////////////////////////
 
-function generate_pile(pile){ // (QUEBRADA! precisa refazer)
-    let k = 0
+function generate_pile(pile){ // gera a pilha inicial de peças.
     for(let i = 0; i <= 6; i++){
-        for(let j = 0; j <= 6; j++){
-            pile[k] = new piece(i,j)
-            k++
+        pile.push(new piece(i,i));
+    }
+    for(let i = 0; i <= 6; i++){
+        for(let j = i; j <= 6; j++){
+           
+            if(!(i === j)){
+                pile.push(new piece(i,j));
+            }
+            
+
         }
     }
 }
@@ -200,9 +206,12 @@ while(play){
  */
     let hand_size = 7; // quantidade inicial de peças
 
-    let pile = []; // objeto que representa a pilha de compra
     let table = []; // objeto que representa o grupo de peças na mesa
+    let pile = []; // objeto que representa a pilha de compra
+    generate_pile(pile);
+
     
+
     let players = [];
     
     // criando players
