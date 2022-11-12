@@ -172,24 +172,42 @@ function test_empty(pile){ // verifica se tem peças na mesa
     return Boolean(!(pile.length))
 }
 function decide_order(players){
-
-    let biggest = new Array(2);
     
-    for (let i = 0; i < biggest.length; i++) {
+    let biggest = new Array(2);
+    let winner;
+    let position;
+    
+    for (let i = 0; i < biggest.length; i++) { // for mirrored pieces
         for (let j = 0; j < players.length; j++) {
-
             if((players[i].hand[j].value_left) == (players[i].hand[j].value_right)){ // when bolth values of the piece are equal
-            
                 if( (biggest[i] == undefined) || (biggest[i] < players[i].hand[j].value_left) ){ // AND "biggests" is empty OR the "value" > "biggest"
-                    biggest[i] = players[i].hand[j].value_left; // biggest recieve value
+                    biggest[i] = players[i].hand[j].value_left; // biggest receive value
+                    position = j;
                 }
-            
-            }
-
-            
+            }            
         }
     }
-    
+
+    if(biggest[0] == undefined && biggest[1] == undefined){ // for lack of mirrored pieces
+        for(let i = 0; i < players.length; i++) {
+            for(let j = 0; j < players[i].hand.length; j++) {
+                if( (biggest[i] < ((players[i].hand[j].value_left) + (players[i].hand[j].value_right)) )){
+                    biggest[i] = ((players[i].hand[j].value_left) + (players[i].hand[j].value_right));
+                    position = j;
+                }
+            }            
+        }
+    }
+
+    for(let i = 0; i < biggest.length; i++){ // comparing who won
+        if( (winner < biggest[i]) || (winner == undefined) ){
+            winner = i;
+        }
+    }
+
+    players[winner].set_right(position); // setting the winning piece
+
+    return winner;
 }
 
 ////////////////////////////////////////
@@ -223,7 +241,7 @@ while(play){
     players[1].draw_piece(hand_size);
 
     // decidindo a ordem
-    // (...)
+    decide_order(players);
 
     // iniciando os rodadas
     // (...)
