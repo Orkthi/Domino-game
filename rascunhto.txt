@@ -8,4 +8,4 @@ Paleta de cores
 
 
 
-Ids do caminho das peças do jogo 
+Ids do caminho das peÃ§as do jogo 
