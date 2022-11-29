@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <svg width="42.85" height="42.85">
+            <rect x="0" y="0" width="99%" height= "99%"
+            style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
+            
+          
+            <circle cx="33" cy="10.5" r="3" fill="black"/>
+
+            <circle cx="22" cy="21" r="3" fill="black"/>
+            
+            <circle cx="11" cy="31.5" r="3" fill="black"/>
+            
+
+
+        </svg>
+</body>
+</html>
+
