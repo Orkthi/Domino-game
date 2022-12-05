@@ -7,7 +7,7 @@ Regras:
 
 				Caso a condição inicial seja da máquina, ela disponibiliza a peça.
 
-				Caso a condição inicial seja do humano, a peça correta deve ser utilizada. Se uma peça que seja 	incorreta seja proposta, um erro deve ser sinalizado.
+				Caso a condição inicial seja do humano, a peça correta deve ser utilizada. Se uma peça que seja incorreta seja proposta, um erro deve ser sinalizado.
 
 				Quando o jogador/maquina tenha colocado uma peça encaixada na lista visível de peças já jogadas, a vez passa para o oponente, até o jogo acabar.
 
