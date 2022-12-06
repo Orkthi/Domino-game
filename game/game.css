@@ -1,3 +1,8 @@
+:root {
+    --borderE: 16px;
+    --borderI: 32px;
+}
+
 html{
     min-height: 100%;
 }
@@ -17,35 +22,34 @@ body{
     background-color: blue;
     display: grid;
     /*grid-template-columns: repeat(17, 1fr);*/
-    grid-template-columns: repeat(17, 90px);
+    grid-template-columns: repeat(17, 96px);
    /* grid-template-rows: repeat(7, 1fr); */
-   grid-template-rows: repeat(7,90px);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+   grid-template-rows: repeat(7,96px);
+    grid-column-gap: 2px;
+    grid-row-gap: 2px;
     
-    width: 1535px;
-    height: 635px;
+    width: 95vw;
+    height: 90vh;
 }
 
 
 .horizontalBox{
-    border-color: black;
-    border-style: solid;
-    border:2px;
-    display: column;
+    /* border-color: black; */
+    /* border-style: solid; */
+
 }
 
 .verticalBox{
     border-color: black;
     border-style: solid;
-    border:2px;
+    border:6px;
     display: flex;
 }
 
 .rectangleLeft{
-    ;
     width: 50%;
     height: 100%;
+    
     
 }
 
@@ -64,10 +68,21 @@ body{
 }
 
 .RectangleUp{    
+    width: 100%;
+    height: 50%;
 
-width: 100%;
-height: 50%;
+}
 
+.svgImage {
+    position: absolute;
+    border: 1px solid black;
+}
+
+
+.horizontalBox .UsableRectangleW{
+    /* border-radius: 6px; 
+    overflow: hidden;
+    position: relative; */
 }
 
 .hand{
@@ -80,40 +95,78 @@ height: 10vw;
 background-color: brown;
 
 }
+
+.horizontalBox {
+    border-radius: var(--borderE);
+    border: solid black 1px;
+}
 .UsableRectangleW{
-    background-color: white;
+    /* background-color: white; */
+    /* background-color: black; */
+    border-radius: var(--borderI); 
+    overflow: hidden;
+    position: relative;
+
+
     width: 100%;
     height: 50%;
-    border: solid;
+    border-width: 3px;
     display:flex ;
     flex-direction: row;
+    border-radius: 2px;
+    /* border: 1px solid;
+    padding: 1px; */
 }
 .UsableRectangleH{
     background-color: white;
     width: 50%;
     height: 100%;
-    border: solid;
+    border-width: 3px;
     display:flex ;
     flex-direction: column;
+    border-radius: 2px;
+    /* border: 1px solid;
+    padding: 1px; */
 }
 .side1{
     height: 100%;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
 }
 .side2{
     height: 100%;
     width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .gamepiece{
     position: absolute;
-    top:300px;
-    left: 750px;
-    background-color: brown;
-    width: 45px;
-    height: 90px;
+    top:600px;
+    left: 800px;
+    background-color: black;
+    border-radius: 2px;
+    width: 49px;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
 }
+.pieceside1{
+width:45px;
+height: 45px;
+
+}
+.pieceside2{
+width:45px;
+height: 45px;
 
 
+}
 
 
 
