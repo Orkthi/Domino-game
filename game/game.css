@@ -96,12 +96,12 @@ background-color: brown;
 
 }
 
-.horizontalBox {
+/*.horizontalBox {
     border-radius: var(--borderE);
     border: solid black 1px;
-}
+}*/
 .UsableRectangleW{
-    /* background-color: white; */
+     background-color: white; 
     /* background-color: black; */
     border-radius: var(--borderI); 
     overflow: hidden;
