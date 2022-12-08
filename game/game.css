@@ -15,28 +15,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    width: 2000px;
+    height: 1500px;
 }
 .table {
     background-color: blue;
     display: grid;
     /*grid-template-columns: repeat(17, 1fr);*/
-    grid-template-columns: repeat(17, 96px);
+    grid-template-columns: repeat(17, 90px);
    /* grid-template-rows: repeat(7, 1fr); */
-   grid-template-rows: repeat(7,96px);
+    grid-template-rows: repeat(7,96px);
     grid-column-gap: 2px;
     grid-row-gap: 2px;
     
-    width: 95vw;
-    height: 90vh;
+    width: 100%;
+    height: 100%;
 }
 
 
 .horizontalBox{
-    /* border-color: black; */
-    /* border-style: solid; */
-
+    /* border-color: black solid 1px; */
 }
 
 .verticalBox{
@@ -73,18 +71,29 @@ body{
 
 }
 
-.svgImage {
-    position: absolute;
-    border: 1px solid black;
+.UsableRectangleW, .UsableRectangleH {
+    /* border: solid 3px black; */
 }
 
+.svgImage {
+    /* position: absolute; */
+    width: auto;
+    height: auto;
+}
 
 .horizontalBox .UsableRectangleW{
-    /* border-radius: 6px; 
     overflow: hidden;
-    position: relative; */
+    border-radius: 6px;
+    /* border: 3px solid black; */
+    /* position: relative; */
 }
 
+.verticalBox .UsableRectangleH{
+    overflow: hidden;
+    border-radius: 6px;
+    /* border: 3px solid black; */    
+    /* position: relative; */
+}
 .hand{
 position: absolute;
 bottom: 0;
@@ -135,6 +144,7 @@ background-color: brown;
     justify-content: center;
     flex-direction: row;
     align-items: center;
+    border-right: solid black 1px;
 }
 .side2{
     height: 100%;
@@ -142,7 +152,29 @@ background-color: brown;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-left: solid black 1px;
 }
+
+.side3 {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    border-top: solid black 1px;
+}
+
+.side4 {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: solid black 1px;
+}
+
 .gamepiece{
     position: absolute;
     top:600px;
