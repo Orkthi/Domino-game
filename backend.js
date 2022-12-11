@@ -200,7 +200,7 @@ class Player {
                 }
             }
         }
-        console.log("------------------------------");
+        // console.log("------------------------------");
     }
     print_hand_playables() { // imprime cada peça da mão do jogador que podem ser jogadas na hora
         console.log("------------------------------");
@@ -211,31 +211,43 @@ class Player {
         for(var i = 0; i < this.hand.length; i++){
             
             piece = this.hand[i];
-
-            if(piece.playable[left] === yes || piece.playable[right] === yes) {
             
-                console.log("Piece "+i+": "+piece.string()+" {Playable}.");
-                
-                if(piece.playable[left] === yes) {
-                    console.log("left: yes.");
-                } else if(piece.playable[left] === yes_rotate) {
-                    console.log("left: yes_rotate.");
-                } else {
-                    console.log("left: no.");
-                }
-                if(piece.playable[right] === yes) {
-                    console.log("right: yes.");
-                } else if(piece.playable[right] === yes_rotate) {
-                    console.log("right: yes_rotate.");
-                } else {
-                    console.log("right: no.");
+            if(piece.playable[left] >= yes || piece.playable[right] >= yes){
+                console.log(">> Piece "+i+": "+piece.string()+" {Playable}");
+
+                switch (piece.playable[left]) {
+                    case yes:
+                        console.log("left: yes.");    
+                        break;
+                    case yes_rotate:
+                        console.log("left: yes_rotate.");
+                        break;
+                    case no:
+                        console.log("left: no.");
+                        break;
+                    default:
+                        console.log("left: Error.");
+                        break;
+                } switch (piece.playable[right]) {
+                    case yes:
+                        console.log("right: yes.");    
+                        break;
+                    case yes_rotate:
+                        console.log("right: yes_rotate.");
+                        break;
+                    case no:
+                        console.log("right: no.");
+                        break;
+                    default:
+                        console.log("right: Error.");
+                        break;
                 }
             } else {
-                console.log("Piece "+i+": "+piece.string());
+                console.log("> Piece "+i+": "+piece.string());
                 console.log("left: no.");
                 console.log("right: no.");
             }
-        }
+        } 
         console.log("------------------------------");
     }
     update_playables() { // 
@@ -546,24 +558,43 @@ function going_first() {
 
     return winner;
 }
-function change_player() {
+/* function change_player() {
     if(current_player === player_list[human]){
         console.log("--------------------------");
-        console.log("changing to: "+player_list[bot].name);
+        console.log("[changing to: "+player_list[bot].name+"]");
         console.log("--------------------------");
         current_player = player_list[bot];
+        console.log("--------------------------");
     } else {
+        console.log("--------------------------");
         console.log("changing to: "+player_list[human].name);
         current_player = player_list[human];
+        console.log("--------------------------");
     }
     current_player.update_playables();
     current_player.update_can_play();
+} */
+function change_player() {
+    
+    let next;
+    
+    if(current_player === player_list[human]){
+        next = player_list[bot];
+    } else {
+        next = player_list[human];
+    }
+
+    // console.log("--------------------------");
+    console.log("changing to: "+next.name+"");
+    current_player = next;
+    // console.log("--------------------------");
+
+    current_player.update_playables();
 }
 function ask_play(position, side) {
     console.log("Chosen: "+position+" Side: "+ side);
     current_player.play_piece(position, side); 
     current_player.update_playables();
-    current_player.update_can_play()
     return true;
 }
 function ask_play_prompt() {
@@ -596,10 +627,13 @@ function match_over() {
         var winner = player_list[human];
         var loser = player_list[bot];
         over = true;
+        console.log("hand-empty: "+winner.name);
     } else if(player_list[bot].hand_is_empty()) {
         var winner = player_list[bot];
         var loser = player_list[human];
         over = true;
+        console.log("hand-empty: "+winner.name);
+
     } else if((player_list[human].can_play === false) && (player_list[bot].can_play === false)) {
         // test who wins...
         if((player_list[human].hand.length) < (player_list[bot].hand.length)) {
@@ -628,13 +662,16 @@ function match_over() {
             }
         }
     } else {
-        console.log("continue...");
+        console.log(">>> Next-Turn <<<");
     }
 
     if(over) {
         let points = loser.hand_sum();
         winner.add_score(points);
-        console.log(">>>> Winner: ["+winner.name+"] <<<<");
+        console.log("=========================================");
+        console.log(">>>> Match-Winner: ["+winner.name+"] <<<<");
+        console.log("added points: "+points);
+        console.log("=========================================");
         return true;
     } else {
         return false;
@@ -692,11 +729,10 @@ function match_over() {
                 let drawn = current_player.draw_piece(1); // compra peça
                 console.log("Can't Play | piece-drawn: "+drawn);
                 current_player.update_playables();
-                current_player.update_can_play();
             } else { 
-                console.log("------------------------------");
-                console.log("[shop-empty]");
-                console.log("------------------------------");
+                // console.log("------------------------------");
+                console.log("[shop-empty, draw]");
+                // console.log("------------------------------");
                 break; // sai do loop se não houverem mais peças para compras
             }
         }
@@ -711,11 +747,7 @@ function match_over() {
             print_table();
         }
 
-        if(match_over()) {
-            break;
-        }
-
-    } while(true);
+    } while(match_over() === false);
 
     console.log("[Game-Over]");
 
