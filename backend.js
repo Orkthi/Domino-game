@@ -13,8 +13,6 @@ const empty = 0;
 
 ////////////////////////////////////////
 
-
-
 ////////////////////////////////////////
 // classes:
 ////////////////////////////////////////
@@ -23,11 +21,11 @@ const empty = 0;
 class Piece {
     constructor(value_left, value_right){ 
 
-        this.value = new Array(2);
+        this.value = new Array();
         this.value[left] = value_left;
         this.value[right] = value_right;
         
-        this.playable = new Array(2);
+        this.playable = new Array();
         this.playable[left] = no;
         this.playable[right] = no;
 
@@ -385,6 +383,11 @@ class Player {
     reset_score() {
         this.score = 0;
     }
+    reset_hand() {
+        let player = this;
+        player.hand = new Array();
+        return true;
+    }
     add_score(points) {
         this.score += points;
     }
@@ -392,8 +395,6 @@ class Player {
 }
 
 ////////////////////////////////////////
-
-
 
 ////////////////////////////////////////
 // functions:
@@ -433,6 +434,12 @@ function print_table() {
     console.log("--------------------------");
     console.log(">>>> [Printing-Table] <<<<");
     print_pile(table);
+
+    let first = 0;
+    let last = table.length-1;
+    let tail = [table[first].value[left], table[last].value[right]];
+    console.log("Left: "+tail[left]+" Right: "+tail[right]);
+
     console.log("--------------------------");
 }
 function shuffle_pile(pile) {
@@ -468,9 +475,9 @@ function going_first() {
 
     // (temp) precisa retornar objeto do jogador vencedor
     let winner_position = (-1);
-    let mirrored = new Array(2);
-    let highest_value = new Array(2);
-    let highest_position = new Array(2);
+    let mirrored = new Array();
+    let highest_value = new Array();
+    let highest_position = new Array();
 
     // inicializando as variaveis
     
@@ -605,12 +612,24 @@ function ask_play_prompt() {
     position = prompt("which piece: ");
 
     if(table.length) {
-        side = prompt("which side: ");
+        side = prompt("which side:\n0: Left\n1: Right");
     }
     
     ask_play(position, side);
     
     return true;
+}
+function bot_play(){
+    
+    for(let position = 0; (position < player_list[bot].hand.length); position++){
+        for(let side = 0; (side < player_list[bot].hand[position].playable.length); side++){
+            if(player_list[bot].hand[position].playable[side]){
+                ask_play(position, side);
+                return true;
+            }
+        }
+    }
+
 }
 function check_shop_empty() {
     if(shop.length === empty){
@@ -647,7 +666,7 @@ function match_over() {
             var loser = player_list[human];
             over = true;
         } else {
-            console.log("bodge 1: match_over()  (FUCK!!!)"); // quantidade de peças iguais
+            // console.log("bodge 1: match_over()  (FUCK!!!)"); // quantidade de peças iguais
             
             if((player_list[human].hand_sum()) < (player_list[bot].hand_sum())) {
                 var winner = player_list[human];
@@ -677,6 +696,28 @@ function match_over() {
         return false;
     } 
 }
+function game_over(){
+    for(let player of player_list){
+        if(player.score >= 100){
+            console.log(">>> Winner: "+player.name+" <<<");
+            return true;
+        } else {
+            console.log(">>> Next-Game <<<");
+            return false;
+        }
+    }          
+}
+
+function restart(){
+
+    let answer;
+    do {
+        answer = prompt("Play againg?\n1: yes\n0: no");
+    }while(answer < 0 || answer > 1);
+
+    return answer;
+    
+}
 
 ////////////////////////////////////////
 
@@ -684,70 +725,107 @@ function match_over() {
 // Main:
 ////////////////////////////////////////
 
-    let player_name = "GB";
-    let hand_size = 7; // quantidade inicial de peças    
-    let table = []; // objeto que representa o grupo de peças na mesa
-    let shop = []; // objeto que representa a pilha de compra
-    let player_list = new Array(2);
+    // declaração
+
+    let hand_size; // quantidade inicial de peças
+    let player_name;
+    let player_list;
+    let table; // objeto que representa o grupo de peças na mesa
+    let shop; // objeto que representa a pilha de compra
     let current_player;
 
+    hand_size = 7; // quantidade inicial de peças
+    player_name = "GB";
+    
     // criando players.
+    player_list = new Array();
     player_list[human] = new Player(player_name); // objeto que representa o jogador
     player_list[bot] = new Player("bot"); // objeto que representa o BOT
 
-    // gerando as peças do shop.
-    generate_pile(shop);
-    shuffle_pile(shop);
-
-    //comprando peças.
-    player_list[human].draw_piece(hand_size); 
-    player_list[bot].draw_piece(hand_size);
-
-    // decidindo qual jogador joga primeiro.
-    current_player = going_first();
-    
-    // começando a primeira jogada.
-    // mostra quais peças podem ser jogadas atualmente.
-    current_player.print_hand_playables();
-    
-    // pergunta qual peça o jogador quer jogar.
-    ask_play_prompt();
-    
-    // mostrar a mesa com a peça jogada.
-    print_table();
-
-
-    do { // gameplay loop da partida.
-
-        // mudar de jogador (automaticamente atualiza as peças que podem ser jogadas para o jogador seguinte).
-        change_player();
-
-        // se não tive peças jogaveis & o shop não estiver vazio, comprar peça.
-        while(current_player.can_play === false) {
-            if(check_shop_empty() === false) { // verifica se ainda tem peças para comprar
-                
-                let drawn = current_player.draw_piece(1); // compra peça
-                console.log("Can't Play | piece-drawn: "+drawn);
-                current_player.update_playables();
-            } else { 
-                // console.log("------------------------------");
-                console.log("[shop-empty, draw]");
-                // console.log("------------------------------");
-                break; // sai do loop se não houverem mais peças para compras
-            }
-        }
-
-        if(current_player.can_play) {
+    do {
+        do {
             
-            // mostra quais peças podem ser jogadas.
+            for(let player of player_list){
+                player.reset_score();
+                player.reset_hand();
+                player.can_play = false;
+            }
+
+            table = new Array();
+            shop = new Array();
+
+            // gerando as peças do shop.
+            generate_pile(shop);
+            shuffle_pile(shop);
+    
+            //comprando peças.
+            player_list[human].draw_piece(hand_size); 
+            player_list[bot].draw_piece(hand_size);
+    
+            // decidindo qual jogador joga primeiro.
+            current_player = going_first();
+            
+            // começando a primeira jogada.
+            // mostra quais peças podem ser jogadas atualmente.
             current_player.print_hand_playables();
+            
             // pergunta qual peça o jogador quer jogar.
-            ask_play_prompt();   
+            switch(current_player) {
+                case player_list[human]:
+                    ask_play_prompt();
+                    break;
+                case player_list[bot]:
+                    bot_play();
+                    break;
+            }
+            
             // mostrar a mesa com a peça jogada.
             print_table();
-        }
-
-    } while(match_over() === false);
+    
+    
+            do { // gameplay loop da partida.
+    
+                // mudar de jogador (automaticamente atualiza as peças que podem ser jogadas para o jogador seguinte).
+                change_player();
+        
+                // se não tive peças jogaveis & o shop não estiver vazio, comprar peça.
+                while(current_player.can_play === false) {
+                    if(check_shop_empty() === false) { // verifica se ainda tem peças para comprar
+                        
+                        let drawn = current_player.draw_piece(1); // compra peça
+                        console.log("Can't Play | piece-drawn: "+drawn);
+                        current_player.update_playables();
+                    } else { 
+                        // console.log("------------------------------");
+                        console.log("[shop-empty, draw]");
+                        // console.log("------------------------------");
+                        break; // sai do loop se não houverem mais peças para compras
+                    }
+                }
+        
+                if(current_player.can_play) {
+                    print_table();
+                    // mostra quais peças podem ser jogadas.
+                    current_player.print_hand_playables();
+                    // pergunta qual peça o jogador quer jogar.
+                    
+                    switch(current_player) {
+                        case player_list[human]:
+                            ask_play_prompt();
+                            break;
+                        case player_list[bot]:
+                            bot_play();
+                            break;
+                    }
+                    
+                    // ask_play_prompt(); // (...) (switch-case)   
+                    // mostrar a mesa com a peça jogada.
+                    print_table();
+                }
+        
+            } while(match_over() === false);
+        }while(game_over() === false);
+    }while(restart());
 
     console.log("[Game-Over]");
 

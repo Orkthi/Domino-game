@@ -14,9 +14,11 @@ Regras:
 		-O 1°  jogador joga a primeira peça;
 		-O 2° jogador deve encaixar uma de suas peças que contenha em uma de suas extremidades o valor contido na peça da mesa, caso o jogador não tenha ele deve comprar na pilha uma peça enquanto não tiver uma que se encaixe no tabuleiro;
 		-O 1° jogador repete a mesma ação descrita acima;
-		- O jogo acaba
-			-Quando um dos jogadores conseguir esvaziar as "maos" primeiro;
-			-(Jogo fechado)Quando não existam mais peças a serem compradas e nenhum dos jogadores possuem peças que possam encaixar na mesa, então o jogador com a menor quantidade de peças ganha;
-		-Ganhador
-			- Quem esvaziar a "mão" primeiro;
-			- 
+
+		- Winner:
+			-Quem esvaziar as "maos" primeiro;
+			-No caso em que nenhum dos jogadores possuem peças que possam encaixar na mesa e não existam mais peças a serem compradas:
+				- O jogador com a menor quantidade de peças ganha;
+				- Caso os jogadores tenham a mesma quantidade de peças, ganha quem tiver a menor soma de valores na mão.
+			
+			
