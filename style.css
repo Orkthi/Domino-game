@@ -1,5 +1,12 @@
 .root{
   --scrollbar-bg: rgb(30, 253, 0);
+
+  --color1: #68b2f8;
+  --color2: #506ee5;
+  --color3: #7037cd;
+  --color4: #651f71;
+  --color5: #3B0944;
+
 }
 
 html{
