@@ -50,6 +50,7 @@ class Piece {
     sum(){
         return (this.value[left] + this.value[right]);
     }
+    
     /*check_can_play_left(){ // (obsoleta) verifica se pode jogar na ponta esquerda da mesa.
         let first = 0;
 
@@ -735,7 +736,7 @@ function restart(){
     let current_player;
 
     hand_size = 7; // quantidade inicial de peças
-    player_name = "GB";
+    player_name = "Jogador1";
     
     // criando players.
     player_list = new Array();
@@ -838,3 +839,67 @@ function restart(){
     // (to-do) calcular quantidade de pontos para o que ganha. score_calculation()
     
 ////////////////////////////////////////
+
+//Usar a função de exibição de mensagem quando ocorre uma jogada inválida:
+
+if (!is_valid_move(move)){
+    show_error_message("Invalid move. Please try again.")
+
+    return 
+}
+
+
+// const playButton = document.querySelector('#play-button');
+// playButton.addEventListener('click', play_game);
+// function updateBoard() {
+//     const board = document.querySelector("#board");
+//     // Use o código já existente para atualizar o tabuleiro com as peças
+//     // ex: board.innerHTML = getBoardHTML()
+// }
+
+//function isValidMove(move) {
+    // Use o código já existente para validar a jogada
+    // ex: return isValidMove(move);
+//}
+// const playButton = document.querySelector("#play-button");
+// playButton.addEventListener("click", function() {
+//     const move = getPlayerMove();
+//     if (isValidMove(move)) {
+//         updateBoard();
+//     } else {
+//         // Exibir mensagem de erro para jogada inválida
+//     }
+// });
+const hand = document.querySelector("#hand");
+hand.addEventListener("click", selectPiece);
+hand.addEventListener("dragstart", dragPiece);
+
+const board = document.querySelector("#board");
+board.addEventListener("drop", dropPiece);
+board.addEventListener("dragover", allowDrop);
+
+// const playButton = document.querySelector("#play-button");
+playButton.addEventListener("click", play_game);
+
+function play_game() {
+    const move = getPlayerMove();
+    if (isValidMove(move)) {
+        updateBoard();
+    } else {
+        show_error_message("Invalid move. Please try again.");
+    }
+}
+
+console.log("daniellllllllllllllll")
+const playButton = document.querySelector("#play-button");
+playButton.addEventListener("click", function() {
+    const result = confirm("Vamos começar a jogar?");
+    if (result) {
+        // código para iniciar o jogo
+    } else {
+        // código para cancelar o jogo
+    }
+});
+
+
+
