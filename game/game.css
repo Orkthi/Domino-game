@@ -18,30 +18,105 @@ body{
     margin: 0;
     padding: 0;
 }
-.main{
+
+.handbox{
+    width: 100vw;
+    height: 0px;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 2000px;
-    height: 1500px;
 }
+
+.oponentHand{
+    position: fixed;
+    top: 10px;
+    display: flex;
+    flex-direction: row;
+    z-index: 20;
+    
+    min-width: 360px;
+    width: auto;
+    padding: 5px;
+    min-height: 90px;
+
+    /* width: 50vw; */
+    background-color: var(--color5);
+    
+}
+
+.oponentHand .handSlot{
+    margin: 0 2px 0 2px;
+    background: white;
+    border-radius:  5px;
+    border: solid black 2px;
+}
+
+.hand{
+    position: fixed;
+    bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    z-index: 20;
+    
+    min-width: 360px;
+
+    width: auto;
+    padding: 5px;
+    min-height: 90px;
+
+    /* width: 50vw; */
+    background-color: var(--color5);
+    
+}
+
+.hand, .oponentHand {
+    /* display: none; */
+}
+
+.hand .handSlot{
+    margin: 0 2px 0 2px;
+    background: white;
+    border-radius:  5px;
+    border: solid black 2px;
+}
+
+.main{
+    background-color: green;
+    /* width: 100%;
+    height: 100%; */
+    
+    display: block;
+    
+    width: 1980px;
+    height: 1080px;
+}
+
 .table {
+
+    /* position: absolute;
+    bottom: 0; */
+    
+    /* position: fixed; */
+
+
+
     background-color: blue;
     display: grid;
+    
+    grid-template-columns: repeat(17, 94px);
+    grid-template-rows: repeat(7,94px);
     /*grid-template-columns: repeat(17, 1fr);*/
-    grid-template-columns: repeat(17, 90px);
    /* grid-template-rows: repeat(7, 1fr); */
-    grid-template-rows: repeat(7,96px);
+
     grid-column-gap: 2px;
     grid-row-gap: 2px;
-    
+
+    justify-content: center;
+    /* align-items: center; */
+
+
+    /*     
     width: 100%;
-    height: 100%;
-}
-
-
-.horizontalBox{
-    /* border-color: black solid 1px; */
+    height: 100%; */
 }
 
 .verticalBox{
@@ -78,119 +153,125 @@ body{
 
 }
 
-.UsableRectangleW, .UsableRectangleH {
-    /* border: solid 3px black; */
-}
-
 .svgImage {
     /* position: absolute; */
     width: auto;
     height: auto;
 }
 
-.horizontalBox .UsableRectangleW{
-    overflow: hidden;
-    border-radius: 6px;
-    /* border: 3px solid black; */
-    /* position: relative; */
-}
-
 .verticalBox .UsableRectangleH{
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 2px;
     /* border: 3px solid black; */    
     /* position: relative; */
 }
-.hand{
-position: fixed;
-bottom: 0;
-
-z-index: 20;
-
-right: 45%;
-width: 10vw;
-height: 10vw;
-background-color: var(--color5);
-
-}
-
-/*.horizontalBox {
-    border-radius: var(--borderE);
-    border: solid black 1px;
-}*/
 
 .UsableRectangleW{
-     background-color: white; 
-    /* background-color: black; */
-    border-radius: var(--borderI); 
-    overflow: hidden;
-    position: relative;
-
-
     width: 100%;
     height: 50%;
     border-width: 3px;
     display: flex;
     flex-direction: row;
-    border-radius: 2px;
-    /* border: 1px solid;
-    padding: 1px; */
+    
 }
+
 .UsableRectangleH{
-    background-color: white;
     width: 50%;
     height: 100%;
     border-width: 3px;
     display:flex ;
     flex-direction: column;
-    border-radius: 2px;
-    /* border: 1px solid;
-    padding: 1px; */
-}
-.side1{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    border-right: solid black 1px;
-}
-.side2{
-    height: 100%;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-left: solid black 1px;
 }
 
-.side3 {
-    height: 50%;
-    width: 100%;
+.horizontalBox .UsableRectangleW{
+    
+    background: white;
+    border-radius:  5px;
+    border: solid black 2px;
+    max-width: 90px;
+
+
     display: flex;
     justify-content: center;
-    flex-direction: row;
     align-items: center;
+}
+
+.verticalBox .UsableRectangleH{
+    
+    background: white;
+    border-radius:  5px;
+    border: solid black 2px;
+    max-height: 90px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sideLeft{
+    /* height: 100%;
+    width: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* padding:0 0 1px 0; */
     border-top: solid black 1px;
+    /* border-right: solid black 1px; */
+
+    rotate: 90deg;
+ 
 }
 
-.side4 {
-    height: 50%;
-    width: 100%;
+.sideRight{
+    /* height: 100%;
+    width: 50%; */
     display: flex;
     justify-content: center;
-    flex-direction: row;
     align-items: center;
+    
+
+    /* padding: 0 1px 0 0; */
     border-bottom: solid black 1px;
+    /* border-left: solid black 1px; */
+
+    rotate: 90deg;
+}
+
+.sideUp {
+    /* height: 50%;
+    width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: solid black 1px;
+    /* border-right: solid black 1px; */
+    
+    /* rotate: 90deg; */
+}
+
+.sideDown {
+    /* height: 50%;
+    width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top: solid black 1px;
+    /* border-left: solid black 1px; */
+    
+    /* rotate: 90deg; */
 }
 
 .gamepiece{
     position: absolute;
     top:600px;
     left: 800px;
-    background-color: black;
-    border-radius: 2px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: solid 2px;
     width: 49px;
     height: 96px;
     display: flex;
@@ -198,11 +279,13 @@ background-color: var(--color5);
     align-items: center;
     justify-content: space-evenly;
 }
+
 .pieceside1{
 width:45px;
 height: 45px;
 
 }
+
 .pieceside2{
 width:45px;
 height: 45px;
@@ -210,11 +293,22 @@ height: 45px;
 
 }
 
+.rotate {
+    rotate: 90deg;
+    padding: auto;
+}
 
+.whitesquare{
+    height: 92px;
+    width: 45px;
+    background-color: whitesmoke;
+}
+ 
 
-
-
-
+#pieceRec3{
+    /* rotate: 180deg;
+    rotate: 90deg; */   
+}
 
 
 

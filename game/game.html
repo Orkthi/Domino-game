@@ -7,397 +7,1299 @@
     <link rel="stylesheet" href="game.css">
     <title>Game</title>
     <link rel="icon" href="/assets/dominologo.svg" type="image/x-icon">
+    <button id="play-button">Play</button>
+    <script src="../backend.js"></script>
+
 </head>
 <body>
 
-    <div class="hand">
+     <!------------------------------------------------- Mão do oponente -------------------------------------------------------------------------------------------->
+
+     <div class="handbox" id="oponent   ">
+        <div class="oponentHand">
+            <div class="handSlot">
+                    <div class="whitesquare">
         
+                    </div>
+            </div>
+            <div class="handSlot">
+                <div class="whitesquare">
+    
+                </div>
+            </div>
+            <div class="handSlot">
+                <div class="whitesquare">
+    
+                </div>
+            </div>
+            <div class="handSlot">
+                <div class="whitesquare">
+    
+                </div>
+            </div>
+            <div class="handSlot">
+                <div class="whitesquare">
+    
+                </div>
+            </div>
+            <div class="handSlot">
+                <div class="whitesquare">
+    
+                </div>
+            </div>
+            <div class="handSlot">
+                <div class="whitesquare">
+    
+                </div>
+            </div>
+        </div>
+     </div>
+
+    <!------------------------------------------------- Mão do jogador -------------------------------------------------------------------------------------------->
+    
+    <div class="handbox" id="playerHand">
+        <div class="hand">
+            <div class="handSlot" id="slotId1">
+
+                <div class="sideUp"  >
+                    <svg width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                    
+                        <circle cx="12" cy="11" r="3" fill="black"/>
+                        <circle cx="12" cy="22.5" r="3" fill="black"/>
+                        <circle cx="12" cy="34" r="3" fill="black"/>
+                    
+                        <circle cx="34" cy="11" r="3" fill="black"/>
+                        <circle cx="34" cy="22.5" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+                    </svg>
+            
+                </div>
+
+                <div class="sideDown">
+                    <svg width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="34" cy="11" r="3" fill="black"/>
+                    
+                        <circle cx="22.5" cy="22.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                    
+                </div>
+                
+            </div>
+                
+            <div class="handSlot" id="slotId2">
+                <div class="pieceside1" id="piece66Side1">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+            
+                </div>
+
+                <div class="pieceside2" id="piece66Side2">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                    
+                </div>
+                
+            </div>
+
+            <div class="handSlot" id="slotId3">
+                <div class="pieceside1" id="piece66Side1">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+            
+                </div>
+
+                <div class="pieceside2" id="piece66Side2">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                    
+                </div>
+                
+            </div>
+
+            <div class="handSlot" id="slotId4">
+                <div class="pieceside1" id="piece66Side1">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+            
+                </div>
+
+                <div class="pieceside2" id="piece66Side2">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                    
+                </div>
+                
+            </div>
+
+            <div class="handSlot" id="slotId5">
+                <div class="pieceside1" id="piece66Side1">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+            
+                </div>
+
+                <div class="pieceside2" id="piece66Side2">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                    
+                </div>
+                
+            </div>
+
+            <div class="handSlot" id="slotId6">
+                <div class="pieceside1" id="piece66Side1">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+            
+                </div>
+
+                <div class="pieceside2" id="piece66Side2">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                    
+                </div>
+                
+            </div>
+
+            <div class="handSlot" id="slotId7">
+                <div class="pieceside1" id="piece66Side1">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+            
+                </div>
+
+                <div class="pieceside2" id="piece66Side2">
+                    <svg class="rotate" width="45" height="45">
+    
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                    
+                </div>
+                
+            </div>
+
+        </div>  
     </div>
-<div class="main">
-    <div class="table">
-        <div class="horizontalBox" id="div1">
-            <div class="UsableRectangleW">
-                <div class="side1">
-                    <svg class="svgImage" width="45" height="45">
-                        <rect x="0" y="0" width="100%" height= "100%"
-                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
+
+    
+
+    
+
+    <div class="main">
+        <div class="table">
+            <div class="horizontalBox" id="div1">
+                <div class="UsableRectangleW">
+
+                    <div class="sideLeft">
+
+                        <svg class="svgImage" width="45" height="45">
+
+                            <rect x="0" y="0" width="100%" height= "100%"
+                            style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
                         
-                        <circle cx="11" cy="10.5" r="3" fill="black"/>
-                        <circle cx="22" cy="10.5" r="3" fill="black"/>
-                        <circle cx="33" cy="10.5" r="3" fill="black"/>
-            
-                        <circle cx="11" cy="31.5" r="3" fill="black"/>
-                        <circle cx="22" cy="31.5" r="3" fill="black"/>
-                        <circle cx="33" cy="31.5" r="3" fill="black"/>
-                    </svg>
-                </div>
-                <div class="side2">
-                    <svg class="svgImage" width="45" height="45">
-                        <rect x="0" y="0" width="100%" height= "100%"
-                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
+                            <circle cx="12" cy="11" r="3" fill="black"/>
+                            <circle cx="12" cy="22.5" r="3" fill="black"/>
+                            <circle cx="12" cy="34" r="3" fill="black"/>
                         
-                        <circle cx="11" cy="10.5" r="3" fill="black"/>
-                        <circle cx="22" cy="10.5" r="3" fill="black"/>
-                        <circle cx="33" cy="10.5" r="3" fill="black"/>
-            
-                        <circle cx="11" cy="31.5" r="3" fill="black"/>
-                        <circle cx="22" cy="31.5" r="3" fill="black"/>
-                        <circle cx="33" cy="31.5" r="3" fill="black"/>
-                    </svg>
-                </div>
-            </div>
+                            <circle cx="34" cy="11" r="3" fill="black"/>
+                            <circle cx="34" cy="22.5" r="3" fill="black"/>
+                            <circle cx="34" cy="34" r="3" fill="black"/>
+                        </svg>
 
-            <div class="RectangleDown" id="piece0">
+                    </div>
 
-            </div>
+                    <div class="sideRight">
 
-        </div>
+                        <svg class="svgImage" width="45" height="45">
 
-        <div class="horizontalBox" id="div2" > 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div> 
-        
-        <div class="horizontalBox" id="div3" > 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div4"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div5" > 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div6" > 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div7" > 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div8" > 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div9" > 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div10"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div11"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div12"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleUp">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div13"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div14"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div15"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div16"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div17"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div18"> 
-            <div class="RectangleUp">
-
-            </div>
-
-            <div class="UsableRectangleW">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div19"> 
-            <div class="RectangleUp">
-
-            </div>
-
-            <div class="UsableRectangleW">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div20"> 
-            <div class="RectangleUp">
-
-            </div>
-
-            <div class="UsableRectangleW">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div21"> 
-            <div class="RectangleUp">
-
-            </div>
-
-            <div class="UsableRectangleW">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div22"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div23"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div24"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div25"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div26"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div27"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div28"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div29"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div30"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div31">
-      
-            <div class="rectangleLeft">
-
-            </div>
-            
-            <div class="UsableRectangleH">
-            <!--<div class="side3">
-                    <svg class="svgImage" width="45" height="45">
-                        <rect x="0" y="0" width="100%" height= "100%"
-                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
+                            <rect x="0" y="0" width="100%" height= "100%"
+                            style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
                         
-                        <circle cx="11" cy="10.5" r="3" fill="black"/>
-                        <circle cx="22" cy="10.5" r="3" fill="black"/>
-                        <circle cx="33" cy="10.5" r="3" fill="black"/>
-            
-                        <circle cx="11" cy="31.5" r="3" fill="black"/>
-                        <circle cx="22" cy="31.5" r="3" fill="black"/>
-                        <circle cx="33" cy="31.5" r="3" fill="black"/>
-                    </svg>
+                            <circle cx="12" cy="11" r="3" fill="black"/>
+                            <circle cx="12" cy="22.5" r="3" fill="black"/>
+                            <circle cx="12" cy="34" r="3" fill="black"/>
+                        
+                            <circle cx="34" cy="11" r="3" fill="black"/>
+                            <circle cx="34" cy="22.5" r="3" fill="black"/>
+                            <circle cx="34" cy="34" r="3" fill="black"/>
+                        </svg>
+                        
+                    </div>
                 </div>
 
-                <div class="side4">
-                    <svg class="svgImage" width="45" height="45">
+                <div class="RectangleDown" id="piece0">
+
+                </div>
+
+            </div>
+
+            <div class="horizontalBox" id="div2" > 
+                <div class="UsableRectangleW">
+
+                    <div class="sideLeft">
+
+                        <svg width="45" height="45">
+
+                            <rect x="0" y="0" width="100%" height= "100%"
+                            style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                            
+                            <circle cx="34" cy="11" r="3" fill="black"/>
+                        
+                            <circle cx="22.5" cy="22.5" r="3" fill="black"/>
+                            
+                            <circle cx="11" cy="34" r="3" fill="black"/>
+                                    
+                        </svg>
+
+                    </div>
+
+                    <div class="sideRight">
+
+                        <svg class="svgImage" width="45" height="45">
+
+                            <rect x="0" y="0" width="100%" height= "100%"
+                            style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                            
+                            
+                            <circle cx="34" cy="11" r="3" fill="black"/>
+                            
+                            <circle cx="11" cy="34" r="3" fill="black"/>
+                        </svg>
+                        
+                    </div>
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div> 
+            
+            <div class="horizontalBox" id="div3" > 
+                <div class="UsableRectangleW" id="pieceRec3" >
+                    <div class="sideLeft">
+
+                        <svg width="45" height="45">
+
+                            <rect x="0" y="0" width="100%" height= "100%"
+                            style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                            
+                            <circle cx="34" cy="11" r="3" fill="black"/>
+                        
+                            <circle cx="22.5" cy="22.5" r="3" fill="black"/>
+                            
+                            <circle cx="11" cy="34" r="3" fill="black"/>
+                                    
+                        </svg>
+
+                    </div>
+
+                    <div class="sideRight">
+
+                        <svg class="svgImage" width="45" height="45">
+
+                            <rect x="0" y="0" width="100%" height= "100%"
+                            style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                            
+                            
+                            <circle cx="34" cy="11" r="3" fill="black"/>
+                            
+                            <circle cx="11" cy="34" r="3" fill="black"/>
+                        </svg>
+                        
+                    </div>
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div4"> 
+                <div class="UsableRectangleH">
+                    
+
+                    <div class="sideUp">
+
+                        <svg width="45" height="45">
+
+                            <rect x="0" y="0" width="100%" height= "100%"
+                            style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                            <circle cx="12" cy="11" r="3" fill="black"/>
+                            <circle cx="12" cy="22.5" r="3" fill="black"/>
+                            <circle cx="12" cy="34" r="3" fill="black"/>
+                        
+                            <circle cx="34" cy="11" r="3" fill="black"/>
+                            <circle cx="34" cy="22.5" r="3" fill="black"/>
+                            <circle cx="34" cy="34" r="3" fill="black"/>
+                                    
+                        </svg>
+
+                    </div>
+
+                    <div class="sideDown">
+
+                        <svg width="45" height="45">
+            
+                            <rect x="0" y="0" width="100%" height= "100%"
+                            style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                            
+                            <circle cx="34" cy="11" r="3" fill="black"/>
+                        
+                            <circle cx="22.5" cy="22.5" r="3" fill="black"/>
+                            
+                            <circle cx="11" cy="34" r="3" fill="black"/>
+                
+                        </svg>
+                        
+                        
+                    </div>
+                    
+                </div>
+
+                <div class="rectangleRight">
+                    
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div5" > 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div6" > 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div7" > 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div8" > 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div9" > 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div10"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div11"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div12"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleUp">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div13"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div14"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div15"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div16"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div17"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div18"> 
+                <div class="RectangleUp">
+
+                </div>
+
+                <div class="UsableRectangleW">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div19"> 
+                <div class="RectangleUp">
+
+                </div>
+
+                <div class="UsableRectangleW">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div20"> 
+                <div class="RectangleUp">
+
+                </div>
+
+                <div class="UsableRectangleW">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div21"> 
+                <div class="RectangleUp">
+
+                </div>
+
+                <div class="UsableRectangleW">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div22"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div23"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div24"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div25"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div26"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div27"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div28"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div29"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div30"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div31">
+        
+                <div class="rectangleLeft">
+
+                </div>
+                
+                <div class="UsableRectangleH">
+                
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div32"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div33"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div34"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div35"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div36"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div37"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div38"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div39"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div40"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div41"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div42"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div43"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div44"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div45"> 
+                <div class="RectangleUp">
+
+                </div>
+
+                <div class="UsableRectangleW">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div46"> 
+                <div class="RectangleUp">
+
+                </div>
+
+                <div class="UsableRectangleW">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div47"> 
+                <div class="RectangleUp">
+
+                </div>
+
+                <div class="UsableRectangleW">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div48"> 
+                <div class="RectangleUp">
+
+                </div>
+
+                <div class="UsableRectangleW">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div49"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div50"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div51"> 
+                <div class="rectangleLeft">
+
+                </div>
+
+                <div class="UsableRectangleH">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div52"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="horizontalBox" id="div53"> 
+                <div class="UsableRectangleW">
+
+                </div>
+
+                <div class="RectangleDown">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div54"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+            
+            <div class="verticalBox" id="div55"> 
+                <div class="UsableRectangleH">
+
+                </div>
+
+                <div class="rectangleRight">
+
+                </div>
+            
+            </div>
+
+            <!---------------------------------------- Peças---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece00">
+
+                <div class="pieceside1" id="piece00Side1">
+                    <svg width="45" height="45">
                         <rect x="0" y="0" width="100%" height= "100%"
-                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
+            
+            
+            
+                    </svg>
+                </div>
+                <div class="pieceside2" id="piece00Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
+            
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 01 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece01">
+
+                <div class="pieceside1" id="piece01Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
+            
+            
+            
+                    </svg>
+                </div>
+                <div class="pieceside2" id="piece01Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 02 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece02">
+
+                <div class="pieceside1" id="piece02Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="99%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
+            
+            
+            
+                    </svg>
+                </div>
+                <div class="pieceside2" id="piece02Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 03 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece02">
+
+                <div class="pieceside1" id="piece03Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+            
+            
+                    </svg>
+                </div>
+                <div class="pieceside2" id="piece03Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+                </div>
+            </div>
+            
+            <!---------------------------------------- Peça 04 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece04">
+
+                <div class="pieceside1" id="piece04Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+            
+            
+                    </svg>
+                </div>
+                <div class="pieceside2" id="piece04Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 05 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece05">
+
+                <div class="pieceside1" id="piece05Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+            
+            
+                    </svg>
+                </div>
+                <div class="pieceside2" id="piece05Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 06 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece06">
+
+                <div class="pieceside1" id="piece06Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+            
+            
+                    </svg>
+                </div>
+                <div class="pieceside2" id="piece06Side2">
+                    <svg class="rotate" width="45" height="45">
+
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 11 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece11">
+
+                <div class="pieceside1" id="piece11Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece11Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
                         
                         <circle cx="11" cy="10.5" r="3" fill="black"/>
                         <circle cx="22" cy="10.5" r="3" fill="black"/>
@@ -406,615 +1308,791 @@
                         <circle cx="11" cy="31.5" r="3" fill="black"/>
                         <circle cx="22" cy="31.5" r="3" fill="black"/>
                         <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
                     </svg>
-                </div> -->
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div32"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div33"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div34"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div35"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div36"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div37"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div38"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div39"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div40"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div41"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div42"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div43"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div44"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div45"> 
-            <div class="RectangleUp">
-
-            </div>
-
-            <div class="UsableRectangleW">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div46"> 
-            <div class="RectangleUp">
-
-            </div>
-
-            <div class="UsableRectangleW">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div47"> 
-            <div class="RectangleUp">
-
-            </div>
-
-            <div class="UsableRectangleW">
-
+                </div>
             </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div48"> 
-            <div class="RectangleUp">
 
-            </div>
-
-            <div class="UsableRectangleW">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div49"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div50"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div51"> 
-            <div class="rectangleLeft">
-
-            </div>
-
-            <div class="UsableRectangleH">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div52"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="horizontalBox" id="div53"> 
-            <div class="UsableRectangleW">
-
-            </div>
-
-            <div class="RectangleDown">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div54"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-        
-        <div class="verticalBox" id="div55"> 
-            <div class="UsableRectangleH">
-
-            </div>
-
-            <div class="rectangleRight">
-
-            </div>
-        
-        </div>
-
-        <!---------------------------------------- Peças---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece00">
-
-            <div class="pieceside1" id="piece00Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
-        
-        
-        
-                </svg>
-            </div>
-            <div class="pieceside2" id="piece00Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
-        
-        
-        
-                </svg>
-            </div>
-        </div>
-
-        <!---------------------------------------- Peça 01 ---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece01">
-
-            <div class="pieceside1" id="piece01Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
-        
-        
-        
-                </svg>
-            </div>
-            <div class="pieceside2" id="piece01Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
-        
-                    <circle cx="22" cy="21" r="3" fill="black"/>
-             
-                </svg>
-            </div>
-        </div>
-
-        <!---------------------------------------- Peça 02 ---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece02">
-
-            <div class="pieceside1" id="piece02Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="99%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
-        
-        
-        
-                </svg>
-            </div>
-            <div class="pieceside2" id="piece02Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0.4" />
-                    
-                  
-                    <circle cx="33" cy="10.5" r="3" fill="black"/>
-                    
-                    <circle cx="11" cy="31.5" r="3" fill="black"/>
-                    
-        
-        
-                </svg>
-            </div>
-        </div>
-
-        <!---------------------------------------- Peça 03 ---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece02">
-
-            <div class="pieceside1" id="piece03Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-        
-        
-        
-                </svg>
-            </div>
-            <div class="pieceside2" id="piece03Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-                    
-                  
-                    <circle cx="33" cy="10.5" r="3" fill="black"/>
-        
-                    <circle cx="22" cy="21" r="3" fill="black"/>
-                    
-                    <circle cx="11" cy="31.5" r="3" fill="black"/>
-                    
-        
-        
-                </svg>
-            </div>
-        </div>
-        
-         <!---------------------------------------- Peça 04 ---------------------------------------------------------------------->
-        
-         <div class="gamepiece" id="piece04">
-
-            <div class="pieceside1" id="piece04Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-        
-        
-        
-                </svg>
-            </div>
-            <div class="pieceside2" id="piece04Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-                    
-                    <circle cx="11" cy="10.5" r="3" fill="black"/>
-                    <circle cx="33" cy="10.5" r="3" fill="black"/>
-                    
-                    <circle cx="11" cy="31.5" r="3" fill="black"/>
-                    <circle cx="33" cy="31.5" r="3" fill="black"/>
-        
-        
-                </svg>
-            </div>
-        </div>
-
-        <!---------------------------------------- Peça 05 ---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece05">
-
-            <div class="pieceside1" id="piece05Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-        
-        
-        
-                </svg>
-            </div>
-            <div class="pieceside2" id="piece05Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-                    
-                    <circle cx="11" cy="10.5" r="3" fill="black"/>
-                    <circle cx="33" cy="10.5" r="3" fill="black"/>
-        
-                    <circle cx="22" cy="21" r="3" fill="black"/>
-                    
-                    <circle cx="11" cy="31.5" r="3" fill="black"/>
-                    <circle cx="33" cy="31.5" r="3" fill="black"/>
-        
-        
-                </svg>
-            </div>
-        </div>
-
-        <!---------------------------------------- Peça 06 ---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece06">
-
-            <div class="pieceside1" id="piece06Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:white; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-        
-        
-        
-                </svg>
-            </div>
-            <div class="pieceside2" id="piece06Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-                    
-                    <circle cx="11" cy="10.5" r="3" fill="black"/>
-                    <circle cx="22" cy="10.5" r="3" fill="black"/>
-                    <circle cx="33" cy="10.5" r="3" fill="black"/>
-        
-                    <circle cx="11" cy="31.5" r="3" fill="black"/>
-                    <circle cx="22" cy="31.5" r="3" fill="black"/>
-                    <circle cx="33" cy="31.5" r="3" fill="black"/>
-        
-        
-                </svg>
-            </div>
-        </div>
-
-        <!---------------------------------------- Peça 11 ---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece11">
-
-            <div class="pieceside1" id="piece11Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-        
-                    <circle cx="22" cy="21" r="3" fill="black"/>
-             
-                </svg>
-        
-        
-        
-            </div>
-            <div class="pieceside2" id="piece11Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-                    
-                    <circle cx="11" cy="10.5" r="3" fill="black"/>
-                    <circle cx="22" cy="10.5" r="3" fill="black"/>
-                    <circle cx="33" cy="10.5" r="3" fill="black"/>
-        
-                    <circle cx="11" cy="31.5" r="3" fill="black"/>
-                    <circle cx="22" cy="31.5" r="3" fill="black"/>
-                    <circle cx="33" cy="31.5" r="3" fill="black"/>
-        
-        
-                </svg>
-            </div>
-        </div>
-
-        <!---------------------------------------- Peça 12 ---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece11">
-
-            <div class="pieceside1" id="piece11Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-        
-                    <circle cx="22" cy="21" r="3" fill="black"/>
-             
-                </svg>
-        
-        
-        
-            </div>
-            <div class="pieceside2" id="piece11Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-                    
-                  
-                    <circle cx="33" cy="10.5" r="3" fill="black"/>
-                    
-                    <circle cx="11" cy="31.5" r="3" fill="black"/>
-                    
-        
-        
-                </svg>
-            </div>
-        </div>
-
-        <!---------------------------------------- Peça 13 ---------------------------------------------------------------------->
-        
-        <div class="gamepiece" id="piece13">
-
-            <div class="pieceside1" id="piece13Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-        
-                    <circle cx="22" cy="21" r="3" fill="black"/>
-             
-                </svg>
-        
-        
-        
-            </div>
-            <div class="pieceside2" id="piece13Side2">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-                    
-                  
-                    <circle cx="33" cy="10.5" r="3" fill="black"/>
-        
-                    <circle cx="22" cy="21" r="3" fill="black"/>
-                    
-                    <circle cx="11" cy="31.5" r="3" fill="black"/>
-                    
-        
-        
-                </svg>
-            </div>
-        </div>
-
-         <!---------------------------------------- Peça 14 ---------------------------------------------------------------------->
-        
-         <div class="gamepiece" id="piece14">
-
-            <div class="pieceside1" id="piece14Side1">
-                <svg width="45" height="45">
-                    <rect x="0" y="0" width="100%" height= "100%"
-                    style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
-        
-                    <circle cx="22" cy="21" r="3" fill="black"/>
-             
-                </svg>
-        
-        
-        
-            </div>
-            <div class="pieceside2" id="piece14Side2">
-                <svg width="45" height="45">
-            <rect x="0" y="0" width="100%" height= "100%"
-            style="fill:whitesmoke; filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:1" />
+            <!---------------------------------------- Peça 12 ---------------------------------------------------------------------->
             
-            <circle cx="11" cy="10.5" r="3" fill="black"/>
-            <circle cx="33" cy="10.5" r="3" fill="black"/>
+            <div class="gamepiece" id="piece11">
+
+                <div class="pieceside1" id="piece11Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
             
-            <circle cx="11" cy="31.5" r="3" fill="black"/>
-            <circle cx="33" cy="31.5" r="3" fill="black"/>
-
-
-        </svg>
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece11Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+                </div>
             </div>
+
+            <!---------------------------------------- Peça 13 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece13">
+
+                <div class="pieceside1" id="piece13Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece13Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 14 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece14">
+
+                <div class="pieceside1" id="piece14Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece14Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                            style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+
+
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 15 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece15">
+
+                <div class="pieceside1" id="piece15Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece15Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+            
+            <!---------------------------------------- Peça 16 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece16">
+
+                <div class="pieceside1" id="piece16Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece16Side2">
+                    <svg class="rotate" width="45" height="45">
+
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 22 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece22Side1">
+
+                <div class="pieceside1" id="piece22Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece22Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+                </div>
+            </div>
+            
+            <!---------------------------------------- Peça 23 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece23Side1">
+
+                <div class="pieceside1" id="piece23Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece23Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+                </div>
+            </div>
+            
+            <!---------------------------------------- Peça 24 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece24Side1">
+
+                <div class="pieceside1" id="piece24Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece24Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+
+            <!---------------------------------------- Peça 25 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece25Side1">
+
+                <div class="pieceside1" id="piece25Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece25Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+        
+
+            <!---------------------------------------- Peça 26 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece26Side1">
+
+                <div class="pieceside1" id="piece26Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece26Side2">
+                    <svg class="rotate" width="45" height="45">
+
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 33 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece33Side1">
+
+                <div class="pieceside1" id="piece33Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece33Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 34 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece34Side1">
+
+                <div class="pieceside1" id="piece34Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece34Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 35 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece35Side1">
+
+                <div class="pieceside1" id="piece35Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece35Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 36 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece36Side1">
+
+                <div class="pieceside1" id="piece36Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                    
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece36Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="22" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="22" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 44 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece44Side1">
+
+                <div class="pieceside1" id="piece44Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece44Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 45 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece45Side1">
+
+                <div class="pieceside1" id="piece45Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece45Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 46 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece46Side1">
+
+                <div class="pieceside1" id="piece46Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece46Side2">
+                    <svg class="rotate" width="45" height="45">
+
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                </div>
+            </div>
+            
+            <!---------------------------------------- Peça 55 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece55Side1">
+
+                <div class="pieceside1" id="piece55Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece55Side2">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça 56 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece56Side1">
+
+                <div class="pieceside1" id="piece56Side1">
+                    <svg width="45" height="45">
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="10.5" r="3" fill="black"/>
+                        <circle cx="33" cy="10.5" r="3" fill="black"/>
+            
+                        <circle cx="22" cy="21" r="3" fill="black"/>
+                        
+                        <circle cx="11" cy="31.5" r="3" fill="black"/>
+                        <circle cx="33" cy="31.5" r="3" fill="black"/>
+            
+            
+                    </svg>
+            
+            
+            
+                </div>
+                <div class="pieceside2" id="piece56Side2">
+                    <svg class="rotate" width="45" height="45">
+
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style=" filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                </div>
+            </div>
+
+            <!---------------------------------------- Peça na mão do oponente ---------------------------------------------------------------------->
+            <div class="gamepiece">
+                <div class="whitesquare">
+
+                </div>
+            </div>
+            
+            <!---------------------------------------- Peça 66 ---------------------------------------------------------------------->
+            
+            <div class="gamepiece" id="piece66Side1">
+
+                <div class="pieceside1" id="piece66Side1">
+                    <svg class="rotate" width="45" height="45">
+
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+        
+            
+            
+                </div>
+                
+                <div class="pieceside2" id="piece66Side2">
+                    <svg class="rotate" width="45" height="45">
+
+                        <rect x="0" y="0" width="100%" height= "100%"
+                        style="filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));;opacity:0" />
+                        
+                        <circle cx="11" cy="12" r="3" fill="black"/>
+                        <circle cx="22.5" cy="12" r="3" fill="black"/>
+                        <circle cx="34" cy="12" r="3" fill="black"/>
+            
+                        <circle cx="11" cy="34" r="3" fill="black"/>
+                        <circle cx="22.5" cy="34" r="3" fill="black"/>
+                        <circle cx="34" cy="34" r="3" fill="black"/>
+            
+                    </svg>
+                </div>
+            </div>
+
+            
+
+
+
+
+
+
         </div>
-
-
-
-
-
-
-
     </div>
-</div>
+
+
+<script scr="../backend.js"></script>
 </body>
 </html>
