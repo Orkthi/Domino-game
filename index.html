@@ -40,6 +40,29 @@
 
     </div>
 
+
+    <div id="menu">
+        <button id="new-game-button" onclick="newGame()">Novo jogo</button>
+        <button id="settings-button" onclick="openSettings()">Configurações</button>
+        <button id="quit-button" onclick="quit()">Sair</button>
+      </div>
+    <script src="backend.js"></script>
+
+
+
+    <script>
+        function newGame() {
+          console.log("Novo jogo iniciado");
+        }
+  
+        function openSettings() {
+          console.log("Configurações abertas");
+        }
+  
+        function quit() {
+          window.close();
+        }
+      </script>
     <footer class="footer">
         <div class="footerBox">
           <h1 class="footerLogo">
